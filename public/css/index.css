@@ -1,0 +1,321 @@
+/* Universal defualt settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  padding: 0 3rem;
+}
+
+/* Nav Section START*/
+/* */
+/* using flexbox to layout the content */
+nav {
+  position: relative;
+  width: 100%;
+  height: 9vh;
+  background-color: #90caf9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.a-logo {
+  position: absolute;
+  left: 0;
+}
+#logo {
+  width: 30%;
+
+  left: 0;
+  top: 0;
+}
+nav li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+nav a {
+  font-size: 1vw;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* */
+/* Nav Section END*/
+
+/* Hero Section START*/
+/* */
+/* giving a size, margins to the hero page and using flexbox to layout the content */
+.hero-page {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 70vh;
+  margin-top: calc(100vw - 99%);
+}
+/* giving a size, and margins to the descirption container and using flexbox to layout the content */
+.hero-desc-con {
+  margin-top: 0rem;
+  width: 59vw;
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: 14rem;
+  margin-right: -12rem;
+}
+
+/* styling hero a element  */
+.shr-btn {
+  font-size: 145%;
+  cursor: pointer;
+  color: white;
+  background-color: #90caf9;
+  font-weight: 700;
+  text-decoration: none;
+  bottom: 5px;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  z-index: 2;
+}
+.hero-desc-con h1 {
+  /* font-size: 350%; */
+  font-size: 3vw;
+}
+
+.hero-desc-con h4 {
+  font-size: 0.9vw;
+  width: 60%;
+  line-height: 2rem;
+  letter-spacing: 2px;
+}
+
+/* svg place at the bottom of the hero page*/
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  opacity: 1;
+}
+/* */
+/* Hero Section END*/
+
+/* Post Section START*/
+/* */
+
+.post-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #90caf9;
+  height: 100%;
+  padding: 15rem 0rem;
+}
+
+.add-btn {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #90caf9;
+}
+
+.post-sec {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 6rem;
+  row-gap: 12rem;
+  padding: 1.9rem;
+}
+
+.post-sec .card {
+  position: relative;
+  width: 20vw;
+  height: 30vh;
+  background-color: white;
+  /* margin: 30px 10px; */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+.post-sec .card:hover {
+  height: 420px;
+}
+
+.post-sec .card .imgBox {
+  position: relative;
+  width: 15vw;
+  height: 32vh;
+  top: -70px;
+  left: 5px;
+  z-index: 1;
+}
+
+.post-sec .card .imgBox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-position: center;
+}
+
+.post-sec .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 1rem 1rem;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.post-sec .card .content form {
+  display: inline-block;
+
+  right: 0;
+}
+.post-sec .card .content input[type="submit"] {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+.edit {
+  margin-right: 1rem;
+}
+
+.post-sec .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+}
+
+/* Post Section END*/
+/* */
+
+/* Media Queries*/
+
+@media screen and (max-width: 1100px) {
+  nav a {
+    font-size: 2.5vw;
+  }
+  .hero-page {
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(100vw - 110%);
+  }
+
+  .hero-desc-con {
+    width: 75vw;
+    height: 42vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    text-align: center;
+  }
+
+  .shr-btn {
+    font-size: 115%;
+  }
+  .hero-desc-con h1 {
+    font-size: 4vw;
+    margin-bottom: 2.5rem;
+    margin-top: -1.5rem;
+  }
+
+  .hero-desc-con h4 {
+    font-size: 2vw;
+    width: 80%;
+    line-height: 1.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-post-img {
+    display: none;
+  }
+
+  .post-sec {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    row-gap: 8rem;
+    padding: 10%;
+  }
+  .post-sec .card {
+    width: 35vw;
+    height: 30vh;
+  }
+
+  .post-sec .card .imgBox {
+    width: 27vw;
+    height: 32vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+    font-size: 4vw;
+  }
+
+  .hero-desc-con {
+    width: 75vw;
+    height: 42vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .shr-btn {
+    font-size: 125%;
+  }
+  .hero-desc-con h1 {
+    font-size: 4vw;
+    margin-bottom: 1rem;
+    margin-top: -1.5rem;
+  }
+
+  .hero-desc-con h4 {
+    font-size: 2.3vw;
+    width: 80%;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-post-img {
+    display: none;
+  }
+
+  .post-sec {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+    row-gap: 8rem;
+    padding: 10%;
+  }
+  .post-sec .card {
+    width: 65vw;
+    height: 30vh;
+  }
+
+  .post-sec .card .imgBox {
+    width: 47vw;
+    height: 32vh;
+  }
+}
