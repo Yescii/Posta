@@ -53,8 +53,8 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 // Routes / Controllers
 //___________________
 //
-const postController = require("./controllers/post.js");
-app.use("/", postController);
+const postController = require("./controllers/Post.js");
+app.use("/posta", postController);
 // app.get("/", (req, res) => {
 //   res.render("index.ejs");
 // });
