@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <h1>Edit Post</h1>
+      </div>
+      <form
+        class="universal-form"
+        action="/posta/<%= post._id %>?_method=PUT"
+        method="POST"
+      >
+        <div class="input-fields">
+          Name: <input type="text" class="input" name="name" /><br />
+          Image: <input type="text" class="input" name="img" /><br />
+        </div>
+        <div class="msg">
+          <textarea placeholder="Message" name="description"></textarea>
+          <input class="btn" type="submit" value="Edit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

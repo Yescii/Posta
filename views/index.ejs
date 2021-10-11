@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a class="a-logo" href=""
+        ><img id="logo" src="img/posta-logo.webp" alt=""
+      /></a>
+
+      <ul>
+        <li><a href="">Contact</a></li>
+        <li><a href="">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-page">
+      <div class="hero-desc-con">
+        <h1>WELCOME TO POSTA</h1>
+        <h4>
+          POSTA LETS YOU SHARE YOUR EXPERIENCES INSTANTLY. JOIN OUR FRIENDLY
+          COMMUNITY, IN SHARING YOUR EXPERIENCES, THOUGHTS OR IDEAS. POSTA IS
+          MORE THAN JUST A POST, ITS SHARING SOMETHING EXTRAORDINARY TO NEVER BE
+          FORGOT ALONE.
+        </h4>
+        <a class="shr-btn" href="/posta/new">SHARE A POST</a>
+      </div>
+
+      <img class="hero-post-img" src="/img/post-img-trans.png" alt="" />
+
+      <svg
+        class="wave"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#90caf9"
+          fill-opacity="1"
+          d="M0,160L48,181.3C96,203,192,245,288,266.7C384,288,480,288,576,272C672,256,768,224,864,218.7C960,213,1056,235,1152,240C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="post-container">
+      <a class="add-btn" href="/posta/new">ADD</a>
+      <div class="post-sec">
+        <% post.forEach(post => { %>
+        <div class="card">
+          <div class="imgBox">
+            <img src=" <%= post.img%>" alt="" />
+          </div>
+          <div class="content">
+            <h2><%= post.name%></h2>
+            <p><%= post.description %></p>
+           
+            <form class="edit" action="/posta/<%= post._id %>/edit">
+              <input type="submit" value="Edit" />
+            </form>
+            <form class="edit" action="/posta/<%= post._id %>/?_method=DELETE" method="POST">
+              <form action="">
+              <input class="delete" type="submit" value="Delete" />
+            </form>
+          </div>
+        </div>
+        <% }) %>
+
+      </div>
+    </div>
+  </body>
+</html>
