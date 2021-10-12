@@ -24,4 +24,4 @@ A CRUD app that allows users to share expriences, thoughts, or ideas in mind.
 
 ## Getting Started
 
-[Click Here](https://heroku-app-jg.herokuapp.com/) to see the deployed app.
+[Click Here](https://app-posta-jg.herokuapp.com/posta) to see the deployed app.
